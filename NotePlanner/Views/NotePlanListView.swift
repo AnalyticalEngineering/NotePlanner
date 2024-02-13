@@ -59,13 +59,15 @@ struct NotePlanListView: View {
                             .padding(.horizontal)
                             .padding(4)
                         }
-                            .onDelete { indexSet in
-                                indexSet.forEach { index in
-                                    let notePlan = notePlans[index]
-                                    context.delete(notePlan)
-                                }
+                        .onDelete { indexSet in
+                            indexSet.forEach { index in
+                                let notePlan = notePlans[index]
+                                context.delete(notePlan)
                             }
+                        }
                     }.listStyle(.plain)
+                }///endOf: else
+            }///endOf: group
                         .toolbar{
                             ToolbarItem(placement: .topBarLeading) {
                                 Button {
@@ -107,11 +109,10 @@ struct NotePlanListView: View {
                             AddNewNotePlanView()
                                 .presentationDetents([.medium])
                         }
+                        }
                 }
             }
-        }
-    }
-}
+
 #Preview {
     NotePlanListView()
         .modelContainer(for: NotePlan.self, inMemory: true)
