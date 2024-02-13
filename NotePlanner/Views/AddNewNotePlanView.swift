@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddNewNotePlanView: View {
     //MARK:  PROPERTIES
@@ -25,7 +26,7 @@ struct AddNewNotePlanView: View {
                 }
                 Section("Objective Summary"){
                     TextEditor( text: $subTitle)
-                        .frame(width: 350, height: 250)
+                        .frame(width: 350, height: 200)
                        
                 }
             }
@@ -38,6 +39,7 @@ struct AddNewNotePlanView: View {
                         Image(systemName: "x.circle.fill")
                             .resizable()
                             .font(.title2)
+                            .foregroundStyle(.red)
                     }
                 }
                 
@@ -67,6 +69,7 @@ struct AddNewNotePlanView: View {
                             Image(systemName: "square.and.arrow.down.fill")
                                 .resizable()
                                 .font(.title2)
+                                .foregroundStyle(.green)
                         }  .disabled(title.isEmpty || subTitle.isEmpty)
                 }
             }

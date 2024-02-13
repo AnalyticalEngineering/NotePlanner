@@ -43,7 +43,7 @@ class NotePlan {
     
     var icon: Image {
         switch status {
-        
+            
         case .planning:
             Image(systemName: "calendar.circle.fill")
         case .inProcess:
@@ -56,27 +56,23 @@ class NotePlan {
             Image(systemName: "exclamationmark.triangle.fill")
         case .review:
             Image(systemName: "checkmark.circle.badge.questionmark")
-        case .proto:
-            Image(systemName: "list.bullet.rectangle")
         case .design:
             Image(systemName: "compass.drawing")
         }
     }
-    
-    enum Status: Int, Codable, Identifiable, CaseIterable {
-        case  inProcess, completed, proto, planning, validating, onHold, review, design
+}
+enum Status: Int, Codable, Identifiable, CaseIterable {
+        case  inProcess, completed,planning, validating, onHold, review, design
         var id: Self {
             self
         }
-        var descr: LocalizedStringResource {
+        var descr: String {
             switch self {
             
             case .inProcess:
                 "In Process"
             case .completed:
                 "Completed"
-            case .proto:
-                "Proto Type"
             case .validating:
                 "Validating"
             case .review:
@@ -91,6 +87,6 @@ class NotePlan {
         }
     }
     
-}
+
 
 

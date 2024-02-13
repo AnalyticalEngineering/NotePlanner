@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct NotePlannerApp: App {
+    
+    
     var body: some Scene {
         WindowGroup {
             NotePlanListView()
