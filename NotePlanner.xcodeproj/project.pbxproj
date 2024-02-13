@@ -14,6 +14,10 @@
 		120C85852B7AF243008A823F /* NotePlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85842B7AF243008A823F /* NotePlannerTests.swift */; };
 		120C858F2B7AF243008A823F /* NotePlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C858E2B7AF243008A823F /* NotePlannerUITests.swift */; };
 		120C85912B7AF243008A823F /* NotePlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85902B7AF243008A823F /* NotePlannerUITestsLaunchTests.swift */; };
+		120C85A12B7AF2A8008A823F /* NotePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A02B7AF2A8008A823F /* NotePlan.swift */; };
+		120C85A42B7AF923008A823F /* ObjectivesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A32B7AF923008A823F /* ObjectivesListView.swift */; };
+		120C85A62B7AFA58008A823F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A52B7AFA58008A823F /* HapticsManager.swift */; };
+		120C85A82B7BC2F4008A823F /* AddNewNotePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,11 @@
 		120C858A2B7AF243008A823F /* NotePlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotePlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		120C858E2B7AF243008A823F /* NotePlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePlannerUITests.swift; sourceTree = "<group>"; };
 		120C85902B7AF243008A823F /* NotePlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		120C85A02B7AF2A8008A823F /* NotePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePlan.swift; sourceTree = "<group>"; };
+		120C85A22B7AF661008A823F /* BuildNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BuildNotes.md; sourceTree = "<group>"; };
+		120C85A32B7AF923008A823F /* ObjectivesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesListView.swift; sourceTree = "<group>"; };
+		120C85A52B7AFA58008A823F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNotePlanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +104,15 @@
 		120C85712B7AF241008A823F /* NotePlanner */ = {
 			isa = PBXGroup;
 			children = (
+				120C859F2B7AF26F008A823F /* Other */,
+				120C859E2B7AF264008A823F /* Views */,
+				120C859D2B7AF25A008A823F /* Models */,
 				120C85722B7AF241008A823F /* NotePlannerApp.swift */,
 				120C85742B7AF241008A823F /* ContentView.swift */,
 				120C85762B7AF243008A823F /* Assets.xcassets */,
 				120C85782B7AF243008A823F /* NotePlanner.entitlements */,
 				120C85792B7AF243008A823F /* Preview Content */,
+				120C85A22B7AF661008A823F /* BuildNotes.md */,
 			);
 			path = NotePlanner;
 			sourceTree = "<group>";
@@ -127,6 +140,31 @@
 				120C85902B7AF243008A823F /* NotePlannerUITestsLaunchTests.swift */,
 			);
 			path = NotePlannerUITests;
+			sourceTree = "<group>";
+		};
+		120C859D2B7AF25A008A823F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				120C85A02B7AF2A8008A823F /* NotePlan.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		120C859E2B7AF264008A823F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				120C85A32B7AF923008A823F /* ObjectivesListView.swift */,
+				120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		120C859F2B7AF26F008A823F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				120C85A52B7AFA58008A823F /* HapticsManager.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				120C85A42B7AF923008A823F /* ObjectivesListView.swift in Sources */,
+				120C85A12B7AF2A8008A823F /* NotePlan.swift in Sources */,
+				120C85A82B7BC2F4008A823F /* AddNewNotePlanView.swift in Sources */,
 				120C85752B7AF241008A823F /* ContentView.swift in Sources */,
+				120C85A62B7AFA58008A823F /* HapticsManager.swift in Sources */,
 				120C85732B7AF241008A823F /* NotePlannerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

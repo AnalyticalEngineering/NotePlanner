@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct NotePlannerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ObjectivesListView()
         }
+        .modelContainer(for: NotePlan.self)
+    }
+    init() {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }
