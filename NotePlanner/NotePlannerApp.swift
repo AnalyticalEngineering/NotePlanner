@@ -12,7 +12,7 @@ import SwiftData
 struct NotePlannerApp: App {
     var body: some Scene {
         WindowGroup {
-            ObjectivesListView()
+            NotePlanListView()
         }
         .modelContainer(for: NotePlan.self)
     }

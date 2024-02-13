@@ -15,7 +15,7 @@
 		120C858F2B7AF243008A823F /* NotePlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C858E2B7AF243008A823F /* NotePlannerUITests.swift */; };
 		120C85912B7AF243008A823F /* NotePlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85902B7AF243008A823F /* NotePlannerUITestsLaunchTests.swift */; };
 		120C85A12B7AF2A8008A823F /* NotePlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A02B7AF2A8008A823F /* NotePlan.swift */; };
-		120C85A42B7AF923008A823F /* ObjectivesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A32B7AF923008A823F /* ObjectivesListView.swift */; };
+		120C85A42B7AF923008A823F /* NotePlanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A32B7AF923008A823F /* NotePlanListView.swift */; };
 		120C85A62B7AFA58008A823F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A52B7AFA58008A823F /* HapticsManager.swift */; };
 		120C85A82B7BC2F4008A823F /* AddNewNotePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +51,7 @@
 		120C85902B7AF243008A823F /* NotePlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		120C85A02B7AF2A8008A823F /* NotePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePlan.swift; sourceTree = "<group>"; };
 		120C85A22B7AF661008A823F /* BuildNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BuildNotes.md; sourceTree = "<group>"; };
-		120C85A32B7AF923008A823F /* ObjectivesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesListView.swift; sourceTree = "<group>"; };
+		120C85A32B7AF923008A823F /* NotePlanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePlanListView.swift; sourceTree = "<group>"; };
 		120C85A52B7AFA58008A823F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNotePlanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,7 +153,7 @@
 		120C859E2B7AF264008A823F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				120C85A32B7AF923008A823F /* ObjectivesListView.swift */,
+				120C85A32B7AF923008A823F /* NotePlanListView.swift */,
 				120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */,
 			);
 			path = Views;
@@ -297,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				120C85A42B7AF923008A823F /* ObjectivesListView.swift in Sources */,
+				120C85A42B7AF923008A823F /* NotePlanListView.swift in Sources */,
 				120C85A12B7AF2A8008A823F /* NotePlan.swift in Sources */,
 				120C85A82B7BC2F4008A823F /* AddNewNotePlanView.swift in Sources */,
 				120C85752B7AF241008A823F /* ContentView.swift in Sources */,

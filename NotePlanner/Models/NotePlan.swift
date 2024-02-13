@@ -5,7 +5,7 @@
 //  Created by J. DeWeese on 2/12/24.
 //
 
-import Foundation
+import SwiftUI
 import SwiftData
 
 
@@ -28,7 +28,7 @@ class NotePlan {
         dateStarted: Date = Date.distantPast,
         dateCompleted: Date = Date.distantPast,
         priority: Int? = nil,
-        status: Status = .onShelf
+        status: Status = .design
         //non-optionals are initialized
     ) {
         self.title = title
@@ -41,15 +41,36 @@ class NotePlan {
         self.status = status
     }
     
+    var icon: Image {
+        switch status {
+        
+        case .planning:
+            Image(systemName: "calendar.circle.fill")
+        case .inProcess:
+            Image(systemName: "repeat.circle.fill")
+        case .validating:
+            Image(systemName: "chart.line.uptrend.xyaxis.circle.fill")
+        case .completed:
+            Image(systemName: "checkmark.seal.fill")
+        case .onHold:
+            Image(systemName: "exclamationmark.triangle.fill")
+        case .review:
+            Image(systemName: "checkmark.circle.badge.questionmark")
+        case .proto:
+            Image(systemName: "list.bullet.rectangle")
+        case .design:
+            Image(systemName: "compass.drawing")
+        }
+    }
+    
     enum Status: Int, Codable, Identifiable, CaseIterable {
-        case onShelf, inProcess, completed, proto, planning, validating, onHold, review
+        case  inProcess, completed, proto, planning, validating, onHold, review, design
         var id: Self {
             self
         }
         var descr: LocalizedStringResource {
             switch self {
-            case .onShelf:
-                "On Shelf"
+            
             case .inProcess:
                 "In Process"
             case .completed:
@@ -64,6 +85,8 @@ class NotePlan {
                 "Objective on Hold"
             case .planning:
                 "Planning"
+            case .design:
+                "Design"
             }
         }
     }
