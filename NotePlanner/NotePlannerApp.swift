@@ -10,15 +10,25 @@ import SwiftData
 
 @main
 struct NotePlannerApp: App {
-    
+    let container: ModelContainer
     
     var body: some Scene {
+     
+        
+        
         WindowGroup {
             NotePlanListView()
         }
-        .modelContainer(for: NotePlan.self)
+        .modelContainer(container)
     }
     init() {
-        print(URL.applicationSupportDirectory.path(percentEncoded: false))
+        let schema = Schema([NotePlan.self])
+        let config = ModelConfiguration("NotePlan", schema: schema)
+        do {
+            container = try ModelContainer(for: NotePlan.self, configurations: config)
+        } catch {
+            fatalError("Could not configure container")
+        }
+        print(URL.documentsDirectory.path(percentEncoded: false))
     }
 }

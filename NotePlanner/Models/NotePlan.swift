@@ -58,6 +58,7 @@ class NotePlan {
             Image(systemName: "checkmark.circle.badge.questionmark")
         case .design:
             Image(systemName: "compass.drawing")
+       
         }
     }
 }
