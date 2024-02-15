@@ -18,7 +18,7 @@ class NotePlan {
     var dateStarted:  Date
     var dateCompleted: Date
     var priority: Int?
-    var status: Status
+    var status: Status.RawValue = Status.onHold.rawValue
     
     init(
         title: String,
@@ -28,7 +28,7 @@ class NotePlan {
         dateStarted: Date = Date.distantPast,
         dateCompleted: Date = Date.distantPast,
         priority: Int? = nil,
-        status: Status = .design
+        status: Status = .onHold
         //non-optionals are initialized
     ) {
         self.title = title
@@ -38,11 +38,11 @@ class NotePlan {
         self.dateStarted = dateStarted
         self.dateCompleted = dateCompleted
         self.priority = priority
-        self.status = status
+        self.status = status.rawValue
     }
     
     var icon: Image {
-        switch status {
+        switch Status(rawValue: status)!  {
             
         case .planning:
             Image(systemName: "calendar.circle.fill")
@@ -67,7 +67,7 @@ enum Status: Int, Codable, Identifiable, CaseIterable {
         var id: Self {
             self
         }
-        var descr: String {
+        var descr: LocalizedStringResource {
             switch self {
             
             case .inProcess:

@@ -113,7 +113,7 @@ struct EditNotePlanView: View {
         .toolbar {
             if changed {
                 Button("Update") {
-                notePlan.status = status
+                    notePlan.status = status.rawValue
                     notePlan.priority = priority
                     notePlan.title = title
                     notePlan.subTitle = subTitle
@@ -127,7 +127,7 @@ struct EditNotePlanView: View {
             }
         }
         .onAppear {
-            status = notePlan.status
+          
             priority = notePlan.priority
             title = notePlan.title
             subTitle = notePlan.subTitle
@@ -139,7 +139,7 @@ struct EditNotePlanView: View {
     }
     
     var changed: Bool {
-        status != notePlan.status
+        status != Status(rawValue: notePlan.status)
         || priority != notePlan.priority
         || title != notePlan.title
         || subTitle != notePlan.subTitle
