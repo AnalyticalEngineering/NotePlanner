@@ -14,14 +14,15 @@ struct EmptyScreenView: View {
             .scaledToFill()
             .overlay {
                 VStack{
-                    Text("")
-                        .padding(.top, 15)
+                   
                     Text("Press '+' button to create new Objective.")
-                        .font(.headline)
+                        .font(.title3)
                         .fontDesign(.serif)
                         .fontWeight(.heavy)
                         .padding(.horizontal, 15)
                         .padding(.top, 25)
+                        .foregroundStyle(.cyan)
+                        .shadow(color: .gray ,radius: 10)
                     Spacer()
                 }
             }

@@ -14,34 +14,46 @@ struct AddNewNotePlanView: View {
     @Environment(\.dismiss) var dismiss
     @State private var title = " "
     @State private var subTitle = " "
-    
+    @State private var initiatedBy = " "
     
     
     var body: some View {
         NavigationStack  {
-            VStack {
-                Form{
-                    Text("Objective Title")
-                        .fontDesign(.serif)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundStyle(.secondary)
-                    TextField("Objective Title", text: $title)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                        .padding(.horizontal)
-                    Text("Objective Description")
-                        .fontDesign(.serif)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundStyle(.secondary)
-                    TextEditor( text: $subTitle)
-                        .lineLimit(4)
-                        .textEditorStyle(.automatic)
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
+                    GroupBox {
+                        VStack {
+                        Text("Objective Title")
+                            .fontDesign(.serif)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.secondary)
+                        TextField("Objective Title", text: $title)
+                            .textFieldStyle(.roundedBorder)
+                            .padding(.horizontal, 5)
+                        Text("Objective Description")
+                            .fontDesign(.serif)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.secondary)
+                        TextEditor( text: $subTitle)
+                            .lineLimit(4)
+                            .textEditorStyle(.automatic)
+                            .frame(width: 375, height: 35)
+                            .padding(.horizontal, 5)
+                            .presentationCornerRadius(12)
+                        Text("Initiated By")
+                            .fontDesign(.serif)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.secondary)
+                        TextField("Objective initiated by", text: $initiatedBy)
+                            .textFieldStyle(.roundedBorder)
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 5)
+                            .padding(.bottom, 15)
+                    }
                 }
-            }
-            .padding(.horizontal)
+            
+            .padding(.horizontal, 5)
                 .toolbar{
                     ToolbarItem(placement: .topBarLeading) {
                         Button {
@@ -74,7 +86,7 @@ struct AddNewNotePlanView: View {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
                             HapticManager.notification(type: .success)
-                            let newNotePlan = NotePlan(title: title, subTitle: subTitle)
+                            let newNotePlan = NotePlan(title: title, subTitle: subTitle, initiatedBy: initiatedBy)
                             context.insert(newNotePlan)
                             dismiss()                               
                             } label: {

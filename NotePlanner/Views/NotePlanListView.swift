@@ -78,7 +78,7 @@ struct NotePlanListView: View {
                     }
                     .sheet(isPresented: $addNewNotePlan) {
                         AddNewNotePlanView()
-                            .presentationDetents([.medium])
+                            .presentationDetents([.height(350)])
                     }
             }
         }
