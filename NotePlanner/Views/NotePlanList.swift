@@ -53,7 +53,6 @@ struct NotePlanList: View {
                                         .fontDesign(.serif)
                                         .fontWeight(.bold)
                                         .foregroundStyle(.primary)
-                                    
                                     Spacer()
                                     Text(notePlan.subTitle)
                                         .padding(4)

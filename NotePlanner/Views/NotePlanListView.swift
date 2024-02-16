@@ -29,7 +29,7 @@ struct NotePlanListView: View {
         var body: some View {
             NavigationView{
                 VStack{
-                    Picker("", selection: $sortOrder) {
+                    Picker(" ", selection: $sortOrder) {
                         ForEach(SortOrder.allCases) { sortOrder in
                             Text("Sort by \(sortOrder.rawValue)").tag(sortOrder)
                         }

@@ -14,12 +14,14 @@ class NotePlan {
     var title:  String
     var subTitle: String
     var summary: String
+    var initiatedBy: String = ""
     var dateAdded: Date
     var dateStarted:  Date
     var dateCompleted: Date
     var priority: Int?
     var status: Status.RawValue = Status.onHold.rawValue
-    var initiatedBy: String = ""
+    @Relationship(deleteRule: .cascade)
+    var notes: [Note]?
     
     init(
         title: String,
@@ -31,6 +33,7 @@ class NotePlan {
         priority: Int? = nil,
         status: Status = .onHold,
         initiatedBy: String = ""
+        
         //non-optionals are initialized
     ) {
         self.title = title
