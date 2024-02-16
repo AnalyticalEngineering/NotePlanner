@@ -19,63 +19,76 @@ struct AddNewNotePlanView: View {
     
     var body: some View {
         NavigationStack  {
-           Form{
-                Section("Objective Name") {
+            VStack {
+                Form{
+                    Text("Objective Title")
+                        .fontDesign(.serif)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.secondary)
                     TextField("Objective Title", text: $title)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                Section("Objective Summary"){
+                    
+                        .padding(.horizontal)
+                    Text("Objective Description")
+                        .fontDesign(.serif)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.secondary)
                     TextEditor( text: $subTitle)
-                        .frame(width: 350, height: 200)
-                       
+                        .lineLimit(4)
+                        .textEditorStyle(.automatic)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 2))
                 }
             }
-            .toolbar{
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        dismiss()
-                        HapticManager.notification(type: .success)
-                    } label: {
-                        Image(systemName: "x.circle.fill")
-                            .resizable()
-                            .font(.title2)
-                            .foregroundStyle(.red)
-                    }
-                }
-                
-                ToolbarItem(placement: .principal) {
-                    Button {
-                        HapticManager.notification(type: .success)
-                    } label: {
-                        HStack{
-                            Image(systemName: "scope")
+            .padding(.horizontal)
+                .toolbar{
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            dismiss()
+                            HapticManager.notification(type: .success)
+                        } label: {
+                            Image(systemName: "x.circle.fill")
                                 .resizable()
                                 .font(.title2)
-                            Text("Add New Objective")
-                                .fontDesign(.serif)
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundStyle(.blue)
+                                .foregroundStyle(.primary)
                         }
                     }
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        HapticManager.notification(type: .success)
-                        let newNotePlan = NotePlan(title: title, subTitle: subTitle)
-                        context.insert(newNotePlan)
-                        dismiss()                               
+                    
+                    ToolbarItem(placement: .principal) {
+                        Button {
+                            HapticManager.notification(type: .success)
                         } label: {
-                            Image(systemName: "square.and.arrow.down.fill")
-                                .resizable()
-                                .font(.title2)
-                                .foregroundStyle(.green)
-                        }  .disabled(title.isEmpty || subTitle.isEmpty)
-                }
+                            HStack{
+                                Image(systemName: "scope")
+                                    .resizable()
+                                    .font(.title2)
+                                Text("Add New Objective")
+                                    .fontDesign(.serif)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.blue)
+                            }
+                        }
+                    }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            HapticManager.notification(type: .success)
+                            let newNotePlan = NotePlan(title: title, subTitle: subTitle)
+                            context.insert(newNotePlan)
+                            dismiss()                               
+                            } label: {
+                                Image(systemName: "square.and.arrow.down.fill")
+                                    .resizable()
+                                    .font(.title2)
+                                    .foregroundStyle(.green)
+                            }  .disabled(title.isEmpty || subTitle.isEmpty)
+                    }
+            }
             }
         }
     }
-}
+
   
 #Preview {
     AddNewNotePlanView()

@@ -1,6 +1,7 @@
 // https://gist.github.com/StewartLynch/03372c873fef568e0a613a968adbae69
 
 import SwiftUI
+import SwiftData
 
 /// A view of inline images that represents a rating.
 /// Tapping on an image will change it from an unfilled to a filled version of the image.

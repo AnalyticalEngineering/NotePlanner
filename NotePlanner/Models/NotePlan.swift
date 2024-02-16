@@ -19,6 +19,7 @@ class NotePlan {
     var dateCompleted: Date
     var priority: Int?
     var status: Status.RawValue = Status.onHold.rawValue
+    var initiatedBy: String = ""
     
     init(
         title: String,
@@ -28,7 +29,8 @@ class NotePlan {
         dateStarted: Date = Date.distantPast,
         dateCompleted: Date = Date.distantPast,
         priority: Int? = nil,
-        status: Status = .onHold
+        status: Status = .onHold,
+        initiatedBy: String = ""
         //non-optionals are initialized
     ) {
         self.title = title
@@ -39,6 +41,7 @@ class NotePlan {
         self.dateCompleted = dateCompleted
         self.priority = priority
         self.status = status.rawValue
+        self.initiatedBy = initiatedBy
     }
     
     var icon: Image {

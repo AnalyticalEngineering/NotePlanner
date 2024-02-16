@@ -19,6 +19,7 @@
 		120C85A62B7AFA58008A823F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A52B7AFA58008A823F /* HapticsManager.swift */; };
 		120C85A82B7BC2F4008A823F /* AddNewNotePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */; };
 		120C85AC2B7BEF7E008A823F /* EditNotePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85AB2B7BEF7E008A823F /* EditNotePlanView.swift */; };
+		1292F8822B7FD14D00AB5811 /* EmptyScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1292F8812B7FD14D00AB5811 /* EmptyScreenView.swift */; };
 		12CC366D2B7BFDA9008EEC8B /* PriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC366C2B7BFDA9008EEC8B /* PriorityView.swift */; };
 		12CC36712B7D2250008EEC8B /* NotePlanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC36702B7D2250008EEC8B /* NotePlanList.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		120C85A52B7AFA58008A823F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNotePlanView.swift; sourceTree = "<group>"; };
 		120C85AB2B7BEF7E008A823F /* EditNotePlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePlanView.swift; sourceTree = "<group>"; };
+		1292F8812B7FD14D00AB5811 /* EmptyScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScreenView.swift; sourceTree = "<group>"; };
 		12CC366C2B7BFDA9008EEC8B /* PriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityView.swift; sourceTree = "<group>"; };
 		12CC36702B7D2250008EEC8B /* NotePlanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePlanList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 				120C85AB2B7BEF7E008A823F /* EditNotePlanView.swift */,
 				12CC366C2B7BFDA9008EEC8B /* PriorityView.swift */,
 				12CC36702B7D2250008EEC8B /* NotePlanList.swift */,
+				1292F8812B7FD14D00AB5811 /* EmptyScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				120C85A42B7AF923008A823F /* NotePlanListView.swift in Sources */,
 				120C85A12B7AF2A8008A823F /* NotePlan.swift in Sources */,
+				1292F8822B7FD14D00AB5811 /* EmptyScreenView.swift in Sources */,
 				12CC36712B7D2250008EEC8B /* NotePlanList.swift in Sources */,
 				12CC366D2B7BFDA9008EEC8B /* PriorityView.swift in Sources */,
 				120C85A82B7BC2F4008A823F /* AddNewNotePlanView.swift in Sources */,

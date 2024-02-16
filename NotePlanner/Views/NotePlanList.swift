@@ -34,7 +34,7 @@ struct NotePlanList: View {
         
         Group {
             if notePlans.isEmpty{
-                ContentUnavailableView("Nothing recorded", image: "book.fill")
+                EmptyScreenView()
             }else{
                 List {
                     ForEach(notePlans) { notePlan in
