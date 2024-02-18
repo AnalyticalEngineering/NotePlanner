@@ -23,6 +23,7 @@ struct EditNotePlanView: View {
     @State private var initiatedBy = ""
     @State private var firstView = true
     @State private var showCategories = false
+    @State private var showNotes = false
     
     init(notePlan: NotePlan) {
         self.notePlan = notePlan
@@ -161,11 +162,15 @@ struct EditNotePlanView: View {
                     CategoryView(notePlan: notePlan)
                 }
                 //MARK:  NOTES LINK BUTTON
-                NavigationLink {
-                    NotesListView(notePlan: notePlan)
+                Button{
+                    showNotes = true
+                    HapticManager.notification(type: .success)
                 } label: {
                     let count = notePlan.notes?.count ?? 0
                     Label("^[\(count) Notes](inflect: true)", systemImage: "pencil.and.outline")
+                }
+                .sheet(isPresented: $showNotes) {
+                    NotesListView(notePlan: notePlan)
                 }
                 .buttonStyle(.borderedProminent)
                 .frame(maxWidth: .infinity, alignment: .trailing)
