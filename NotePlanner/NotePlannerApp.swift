@@ -14,8 +14,6 @@ struct NotePlannerApp: App {
     
     var body: some Scene {
      
-        
-        
         WindowGroup {
             NotePlanListView()
         }

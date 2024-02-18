@@ -19,9 +19,13 @@ class NotePlan {
     var dateStarted:  Date
     var dateCompleted: Date
     var priority: Int?
-    var status: Status.RawValue = Status.onHold.rawValue
+    
+    var status: Status.RawValue = Status.Strategize.rawValue
     @Relationship(deleteRule: .cascade)
     var notes: [Note]?
+    @Relationship(inverse: \Category.notePlans)
+    var categories: [Category]?
+    
     
     init(
         title: String,
@@ -31,7 +35,7 @@ class NotePlan {
         dateStarted: Date = Date.distantPast,
         dateCompleted: Date = Date.distantPast,
         priority: Int? = nil,
-        status: Status = .onHold,
+        status: Status = .Strategize,
         initiatedBy: String = ""
         
         //non-optionals are initialized
@@ -50,46 +54,39 @@ class NotePlan {
     var icon: Image {
         switch Status(rawValue: status)!  {
             
-        case .planning:
-            Image(systemName: "calendar.circle.fill")
-        case .inProcess:
-            Image(systemName: "repeat.circle.fill")
-        case .validating:
-            Image(systemName: "chart.line.uptrend.xyaxis.circle.fill")
-        case .completed:
-            Image(systemName: "checkmark.seal.fill")
-        case .onHold:
-            Image(systemName: "exclamationmark.triangle.fill")
-        case .review:
-            Image(systemName: "checkmark.circle.badge.questionmark")
-        case .design:
+        case .Calibrate:
+            Image(systemName: "location.north")
+        case .Strategize:
             Image(systemName: "compass.drawing")
+        case .Knowledge:
+            Image(systemName: "books.vertical.fill")
+        case .Contribution:
+            Image(systemName: "globe")
+        case .Strength:
+            Image(systemName: "figure.highintensity.intervaltraining")
        
         }
     }
 }
 enum Status: Int, Codable, Identifiable, CaseIterable {
-        case  inProcess, completed,planning, validating, onHold, review, design
+        case  Strategize, Contribution,Calibrate, Knowledge, Strength
         var id: Self {
             self
         }
         var descr: LocalizedStringResource {
             switch self {
             
-            case .inProcess:
-                "In Process"
-            case .completed:
-                "Completed"
-            case .validating:
-                "Validating"
-            case .review:
-                "After Action Review"
-            case .onHold:
-                "Objective on Hold"
-            case .planning:
-                "Planning"
-            case .design:
-                "Design"
+            case .Strategize:
+                "Strategize"
+            case .Contribution:
+                "Contribution"
+            case .Knowledge:
+                "Knowledge"
+            case .Strength:
+                "Strength"
+            case .Calibrate:
+                "Calibrate"
+
             }
         }
     }

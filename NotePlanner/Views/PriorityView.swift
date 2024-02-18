@@ -30,14 +30,13 @@ public struct PriorityView: View {
     ///   - color: The color of the image ( (Default - systemYellow)
     ///   - sfSymbol: A String representing an SFImage that has a fill variabnt (Default -  "star")
     ///
-    public init(maxRating: Int, currentRating: Binding<Int?>, width: Int = 20, color: UIColor = .systemRed, sfSymbol: String = "flag") {
+    public init(maxRating: Int, currentRating: Binding<Int?>, width: Int = 25, color: UIColor = .systemRed, sfSymbol: String = "flag") {
         self.maxRating = maxRating
         self._currentRating = currentRating
         self.width = width
         self.color = color
         self.sfSymbol = sfSymbol
     }
-
     public var body: some View {
         HStack {
                 Image(systemName: sfSymbol)
@@ -65,7 +64,6 @@ public struct PriorityView: View {
             }
         }.frame(width: CGFloat(maxRating * width))
     }
-    
     func correctImage(for rating: Int) -> Bool {
         if let currentRating, rating < currentRating {
             return true
@@ -74,7 +72,6 @@ public struct PriorityView: View {
         }
     }
 }
-
 struct FillImage: ViewModifier {
     let fill: Bool
     func body(content: Content) -> some View {
@@ -86,7 +83,6 @@ struct FillImage: ViewModifier {
         }
     }
 }
-
 extension View {
     func fillImage(_ fill: Bool) -> some View {
         modifier(FillImage(fill: fill))
@@ -101,7 +97,7 @@ extension View {
             PriorityView(
                 maxRating: 5,
                 currentRating: $currentRating,
-                width: 30,
+                width: 35,
                 color: .red,
                 sfSymbol: "flag"
             )

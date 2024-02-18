@@ -48,14 +48,16 @@ struct NotePlanList: View {
                                         .frame(width: 35, height: 35)
                                         .fontWeight(.regular)
                                         .foregroundStyle(.blue)
+                                        
                                     Text(notePlan.title)
                                         .font(.title2)
                                         .fontDesign(.serif)
                                         .fontWeight(.bold)
                                         .foregroundStyle(.primary)
+                                        .padding(.leading, 15)
                                     Spacer()
                                     Text(notePlan.subTitle)
-                                        .padding(4)
+                                        .padding(2)
                                         .foregroundStyle(.gray)
                                         .font(.caption)
                                 }
@@ -64,7 +66,7 @@ struct NotePlanList: View {
                                     HStack{
                                         if let priority = notePlan.priority {
                                             HStack{
-                                                ForEach(0..<priority, id: \.self) {
+                                                ForEach(1..<priority, id: \.self) {
                                                     _ in
                                                     Image(systemName: "flag.fill")
                                                         .imageScale(.medium)
@@ -72,9 +74,17 @@ struct NotePlanList: View {
                                                 }
                                             }
                                             .padding(.horizontal,2)
-                                            .padding(.leading,60)
+                                            .padding(.leading,70)
                                         }
                                         Spacer()
+                                        if let categories = notePlan.categories {
+                                            ViewThatFits {
+                                                CategoryStackView(categories: categories)
+                                                ScrollView(.horizontal, showsIndicators: false) {
+                                                    CategoryStackView(categories: categories)
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             } .padding(4)
