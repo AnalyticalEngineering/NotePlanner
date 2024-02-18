@@ -23,24 +23,28 @@ struct NotesListView: View {
     
     var body: some View {
         NavigationStack{
-            VStack{
-                HStack {
-                    TextField("Title:", text: $titleOfNote)
+            GroupBox{
+                VStack{
+                    HStack {
+                        TextField("Title:", text: $titleOfNote)
+                            .font(.custom("HelveticaNeue", size: 18))
+                            .textFieldStyle(.roundedBorder)
+                            .autocorrectionDisabled()
+                            .frame(width: 300)
+                        Spacer()
+                    }
+                    .textFieldStyle(.roundedBorder)
+                    .padding(.horizontal)
+                    .padding(.top, 15)
+                    
+                    TextEditor(text: $text)
+                        .foregroundColor(Color.gray)
                         .font(.custom("HelveticaNeue", size: 18))
-                        .textFieldStyle(.roundedBorder)
-                        .autocorrectionDisabled()
-                        .frame(width: 350)
-                    Spacer()
+                        .lineSpacing(5)
+                        .border(Color.secondary)
+                        .frame(height: 150)
+                    
                 }
-                .textFieldStyle(.roundedBorder)
-                .padding(.horizontal)
-                .padding(.top, 15)
-                
-                TextEditor(text: $text)
-                    .foregroundColor(Color.gray)
-                    .font(.custom("HelveticaNeue", size: 18))
-                    .lineSpacing(5)
-                    .frame(height: 100)
                 List {
                     let sortedNotes = notePlan.notes?.sorted(using: KeyPathComparator(\Note.creationDate)) ?? []
                     ForEach(sortedNotes) { note in
@@ -84,16 +88,23 @@ struct NotesListView: View {
                 }
                 .listStyle(.plain)
             }
-            
             .toolbar {
-                ToolbarItem( placement: .topBarLeading) {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        HapticManager.notification(type: .success)
+                        dismiss()
+                    } label: {
+                        Text("Cancel")
+                    }
+                }
+                ToolbarItem( placement: .topBarTrailing) {
                     if isEditing {
                         Button("Cancel") {
                             titleOfNote = ""
                             text = ""
                             selectedNote = nil
                             HapticManager.notification(type: .success)
-                         hideKeyboard()
+                            hideKeyboard()
                         }
                         .buttonStyle(.bordered)
                         .tint(.red)
@@ -137,10 +148,3 @@ struct NotesListView: View {
             .modelContainer(preview.container)
     }
 }
-#if canImport(UIKit)
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-#endif

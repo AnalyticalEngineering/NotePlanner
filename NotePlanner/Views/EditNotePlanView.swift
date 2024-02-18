@@ -167,10 +167,10 @@ struct EditNotePlanView: View {
                     HapticManager.notification(type: .success)
                 } label: {
                     let count = notePlan.notes?.count ?? 0
-                    Label("^[\(count) Notes](inflect: true)", systemImage: "pencil.and.outline")
+                    Label("^[\(count) Ideas](inflect: true)", systemImage: "pencil.and.outline")
                 }
                 .sheet(isPresented: $showNotes) {
-                    NotesListView(notePlan: notePlan)
+                    NoteListView2(notePlan: notePlan)
                 }
                 .buttonStyle(.borderedProminent)
                 .frame(maxWidth: .infinity, alignment: .trailing)

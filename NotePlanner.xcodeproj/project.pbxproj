@@ -19,6 +19,9 @@
 		120C85A62B7AFA58008A823F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A52B7AFA58008A823F /* HapticsManager.swift */; };
 		120C85A82B7BC2F4008A823F /* AddNewNotePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */; };
 		120C85AC2B7BEF7E008A823F /* EditNotePlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120C85AB2B7BEF7E008A823F /* EditNotePlanView.swift */; };
+		121F39F52B82659C0080E61C /* NoteListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121F39F42B82659C0080E61C /* NoteListView2.swift */; };
+		121F39F72B8268270080E61C /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121F39F62B8268270080E61C /* AddNoteView.swift */; };
+		121F39F92B826A390080E61C /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121F39F82B826A390080E61C /* EditNoteView.swift */; };
 		1292F8822B7FD14D00AB5811 /* EmptyScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1292F8812B7FD14D00AB5811 /* EmptyScreenView.swift */; };
 		1292F8842B7FE59400AB5811 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1292F8832B7FE59400AB5811 /* Note.swift */; };
 		1292F8862B7FED6900AB5811 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1292F8852B7FED6900AB5811 /* NotesListView.swift */; };
@@ -70,6 +73,9 @@
 		120C85A52B7AFA58008A823F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		120C85A72B7BC2F4008A823F /* AddNewNotePlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewNotePlanView.swift; sourceTree = "<group>"; };
 		120C85AB2B7BEF7E008A823F /* EditNotePlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNotePlanView.swift; sourceTree = "<group>"; };
+		121F39F42B82659C0080E61C /* NoteListView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView2.swift; sourceTree = "<group>"; };
+		121F39F62B8268270080E61C /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		121F39F82B826A390080E61C /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 		1292F8812B7FD14D00AB5811 /* EmptyScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScreenView.swift; sourceTree = "<group>"; };
 		1292F8832B7FE59400AB5811 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		1292F8852B7FED6900AB5811 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
@@ -197,6 +203,9 @@
 				1292F88E2B813AD500AB5811 /* CategoryView.swift */,
 				1292F8972B813F7E00AB5811 /* NewCategoryView.swift */,
 				1292F8992B81743400AB5811 /* CategoryStackView.swift */,
+				121F39F42B82659C0080E61C /* NoteListView2.swift */,
+				121F39F62B8268270080E61C /* AddNoteView.swift */,
+				121F39F82B826A390080E61C /* EditNoteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -361,6 +370,8 @@
 				1292F8942B813D7200AB5811 /* PreviewContainers.swift in Sources */,
 				120C85A42B7AF923008A823F /* NotePlanListView.swift in Sources */,
 				120C85A12B7AF2A8008A823F /* NotePlan.swift in Sources */,
+				121F39F52B82659C0080E61C /* NoteListView2.swift in Sources */,
+				121F39F92B826A390080E61C /* EditNoteView.swift in Sources */,
 				1292F8982B813F7E00AB5811 /* NewCategoryView.swift in Sources */,
 				1292F8822B7FD14D00AB5811 /* EmptyScreenView.swift in Sources */,
 				1292F8922B813B4B00AB5811 /* NotePlanSamples.swift in Sources */,
@@ -377,6 +388,7 @@
 				1292F8882B8137AE00AB5811 /* Category.swift in Sources */,
 				120C85732B7AF241008A823F /* NotePlannerApp.swift in Sources */,
 				1292F8862B7FED6900AB5811 /* NotesListView.swift in Sources */,
+				121F39F72B8268270080E61C /* AddNoteView.swift in Sources */,
 				1292F8962B813D9E00AB5811 /* CategorySamples.swift in Sources */,
 				120C85AC2B7BEF7E008A823F /* EditNotePlanView.swift in Sources */,
 			);

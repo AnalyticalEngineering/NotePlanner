@@ -37,7 +37,7 @@ struct AddNewNotePlanView: View {
                         TextEditor( text: $subTitle)
                             .lineLimit(4)
                             .textEditorStyle(.automatic)
-                            .frame(width: 375, height: 35)
+                            .frame(width: 375, height: 55)
                             .padding(.horizontal, 5)
                             .presentationCornerRadius(12)
                         Text("Initiated By")
